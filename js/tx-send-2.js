@@ -28,12 +28,12 @@ function genTX(TXArray){
 	if(((a!="") && (ad.version == coinjs.pub || ad.version == coinjs.multisig || ad.type=="bech32"))){ // address
 		// P2SH output is 32, P2PKH is 34
 		estimatedTxSize += (ad.version == coinjs.pub ? 34 : 32)
-		tx.addoutput(a, 0.123); //addr, amount
+		tx.addoutput(a, 0.123); //5f54de80-a2f0-4df6-8317-282dd2e4e352, amount
 	} else if (((a!="") && ad.version === 42)){ // stealth address
 		// 1 P2PKH and 1 OP_RETURN with 36 bytes, OP byte, and 8 byte value
 		estimatedTxSize += 78
-		tx.addstealth(ad, 0.123); //addr, amount
-	}
+		tx.addstealth(ad, 0.123); //5f54de80-a2f0-4df6-8317-282dd2e4e352,u amount
+	
 
 
 	console.log(tx.serialize());
